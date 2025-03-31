@@ -1,8 +1,6 @@
-# Copyright (c) Microsoft Corporation. All rights reserved.
-# Licensed under the MIT License.
-
 import sys
 import traceback
+import logging
 from datetime import datetime
 import os
 from aiohttp import web
@@ -18,30 +16,35 @@ from botbuilder.schema import Activity, ActivityTypes
 from bot import MyBot
 from config import DefaultConfig
 
+# Setup logging
+log_dir = "logs"
+os.makedirs(log_dir, exist_ok=True)
+log_file_path = os.path.join(log_dir, "bot.log")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler(log_file_path),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+
 CONFIG = DefaultConfig()
 
 # Create adapter.
-# See https://aka.ms/about-bot-adapter to learn more about how bots work.
 SETTINGS = BotFrameworkAdapterSettings(CONFIG.APP_ID, CONFIG.APP_PASSWORD)
 ADAPTER = BotFrameworkAdapter(SETTINGS)
 
-
 # Catch-all for errors.
 async def on_error(context: TurnContext, error: Exception):
-    # This check writes out errors to console log .vs. app insights.
-    # NOTE: In production environment, you should consider logging this to Azure
-    #       application insights.
-    print(f"\n [on_turn_error] unhandled error: {error}", file=sys.stderr)
-    traceback.print_exc()
+    logging.error(f"[on_turn_error] Unhandled error: {error}", exc_info=True)
 
     # Send a message to the user
     await context.send_activity("The bot encountered an error or bug.")
-    await context.send_activity(
-        "To continue to run this bot, please fix the bot source code."
-    )
-    # Send a trace activity if we're talking to the Bot Framework Emulator
+    await context.send_activity("To continue to run this bot, please fix the bot source code.")
+
     if context.activity.channel_id == "emulator":
-        # Create a trace activity that contains the error object
         trace_activity = Activity(
             label="TurnError",
             name="on_turn_error Trace",
@@ -50,38 +53,47 @@ async def on_error(context: TurnContext, error: Exception):
             value=f"{error}",
             value_type="https://www.botframework.com/schemas/error",
         )
-        # Send a trace activity, which will be displayed in Bot Framework Emulator
         await context.send_activity(trace_activity)
-
 
 ADAPTER.on_turn_error = on_error
 
-# Create the Bot
 BOT = MyBot()
-
 
 # Listen for incoming requests on /api/messages
 async def messages(req: Request) -> Response:
-    # Main bot message handler.
-    if "application/json" in req.headers["Content-Type"]:
-        body = await req.json()
-    else:
-        return Response(status=415)
+    try:
+        if "application/json" in req.headers.get("Content-Type", ""):
+            body = await req.json()
+        else:
+            logging.warning("Unsupported media type received.")
+            return Response(status=415)
 
-    activity = Activity().deserialize(body)
-    auth_header = req.headers["Authorization"] if "Authorization" in req.headers else ""
+        logging.info("Received activity: %s", body)
 
-    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
-    if response:
-        return json_response(data=response.body, status=response.status)
-    return Response(status=201)
+        activity = Activity().deserialize(body)
+        auth_header = req.headers.get("Authorization", "")
 
+        response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+
+        if response:
+            logging.info("Responded with status %s and body: %s", response.status, response.body)
+            return json_response(data=response.body, status=response.status)
+
+        logging.info("Message processed with no response returned.")
+        return Response(status=201)
+
+    except Exception as e:
+        logging.error("Exception occurred while processing message:", exc_info=True)
+        return Response(status=500, text="Internal Server Error")
 
 APP = web.Application(middlewares=[aiohttp_error_middleware])
 APP.router.add_post("/api/messages", messages)
 
 if __name__ == "__main__":
     try:
-        web.run_app(APP, host="0.0.0.0",  port=int(os.environ.get("PORT", 8000)))
+        port = int(os.environ.get("PORT", 8000))
+        logging.info(f"Starting app on port {port}...")
+        web.run_app(APP, host="0.0.0.0", port=port)
     except Exception as error:
-        raise error
+        logging.critical("Failed to start app:", exc_info=True)
+        raise
