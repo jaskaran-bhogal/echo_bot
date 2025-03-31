@@ -4,7 +4,7 @@
 import sys
 import traceback
 from datetime import datetime
-
+import os
 from aiohttp import web
 from aiohttp.web import Request, Response, json_response
 from botbuilder.core import (
@@ -82,6 +82,6 @@ APP.router.add_post("/api/messages", messages)
 
 if __name__ == "__main__":
     try:
-        web.run_app(APP, host="localhost", port=CONFIG.PORT)
+        web.run_app(APP, host="0.0.0.0",  port=int(os.environ.get("PORT", 8000)))
     except Exception as error:
         raise error
