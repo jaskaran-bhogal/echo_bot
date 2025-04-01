@@ -10,6 +10,7 @@ class DefaultConfig:
     PORT = 8000
     APP_ID = os.environ["MicrosoftAppId"]
     APP_PASSWORD = os.environ["MicrosoftAppPassword"]
+    TENANT_ID = "f26327e3-d04d-4a8c-8251-9a766968e77a"
     
     if not APP_ID:
         print(" MicrosoftAppId is not set!")

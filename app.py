@@ -33,7 +33,7 @@ logging.basicConfig(
 CONFIG = DefaultConfig()
 
 # Create adapter.
-SETTINGS = BotFrameworkAdapterSettings(CONFIG.APP_ID, CONFIG.APP_PASSWORD)
+SETTINGS = BotFrameworkAdapterSettings(CONFIG.APP_ID, CONFIG.APP_PASSWORD, channel_auth_tenant=CONFIG.TENANT_ID)
 ADAPTER = BotFrameworkAdapter(SETTINGS)
 
 # Catch-all for errors.
