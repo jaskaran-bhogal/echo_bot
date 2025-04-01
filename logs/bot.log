@@ -15,3 +15,228 @@
 2025-03-31 15:54:36,817 [INFO] 127.0.0.1 [31/Mar/2025:14:54:36 -0700] "POST /api/messages HTTP/1.1" 201 175 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
 2025-03-31 15:55:24,630 [INFO] 127.0.0.1 [31/Mar/2025:14:55:24 -0700] "GET /_stcore/health HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
 2025-03-31 15:55:24,630 [INFO] 127.0.0.1 [31/Mar/2025:14:55:24 -0700] "GET /_stcore/host-config HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:03:14,743 [INFO] Starting app on port 8000...
+2025-04-01 15:03:55,101 [INFO] Received activity: {'type': 'conversationUpdate', 'membersAdded': [{'id': 'd2555ef0-0f3c-11f0-9a00-492413f8e1ec', 'name': 'Bot'}, {'id': '71bee825-421e-4efc-8f41-6dbfc584d1ff', 'name': 'User'}], 'membersRemoved': [], 'channelId': 'emulator', 'conversation': {'id': 'd2590870-0f3c-11f0-bf20-31693d7816b8|livechat'}, 'id': 'd268bfe0-0f3c-11f0-bf20-31693d7816b8', 'localTimestamp': '2025-04-01T15:03:55-06:00', 'recipient': {'id': 'd2555ef0-0f3c-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:03:55.101Z', 'from': {'id': '71bee825-421e-4efc-8f41-6dbfc584d1ff', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:03:55,106 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:03:55,109 [INFO] 127.0.0.1 [01/Apr/2025:14:03:55 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:03:58,660 [INFO] Received activity: {'type': 'conversationUpdate', 'membersAdded': [{'id': 'd481dbe0-0f3c-11f0-9a00-492413f8e1ec', 'name': 'Bot'}, {'id': '08161dac-84a8-4766-8d9e-548b7da4d8aa', 'name': 'User'}], 'membersRemoved': [], 'channelId': 'emulator', 'conversation': {'id': 'd4825110-0f3c-11f0-bf20-31693d7816b8|livechat'}, 'id': 'd487f660-0f3c-11f0-bf20-31693d7816b8', 'localTimestamp': '2025-04-01T15:03:58-06:00', 'recipient': {'id': 'd481dbe0-0f3c-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:03:58.662Z', 'from': {'id': '08161dac-84a8-4766-8d9e-548b7da4d8aa', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:03:58,661 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:03:58,664 [INFO] 127.0.0.1 [01/Apr/2025:14:03:58 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:04:02,035 [INFO] Received activity: {'channelData': {'clientActivityID': '1743541441999iylzwrr1z5a'}, 'text': 'hui', 'textFormat': 'plain', 'type': 'message', 'channelId': 'emulator', 'from': {'id': '08161dac-84a8-4766-8d9e-548b7da4d8aa', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'localTimestamp': '2025-04-01T15:04:02-06:00', 'localTimezone': 'America/Denver', 'attachments': [], 'entities': [{'requiresBotState': True, 'supportsListening': True, 'supportsTts': True, 'type': 'ClientCapabilities'}], 'conversation': {'id': 'd4825110-0f3c-11f0-bf20-31693d7816b8|livechat'}, 'id': 'd68b4070-0f3c-11f0-bf20-31693d7816b8', 'recipient': {'id': 'd481dbe0-0f3c-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:04:02.039Z', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:04:02,036 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:04:02,037 [INFO] 127.0.0.1 [01/Apr/2025:14:04:02 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:04:12,303 [INFO] 127.0.0.1 [01/Apr/2025:14:04:12 -0700] "GET /_stcore/health HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:04:12,305 [INFO] 127.0.0.1 [01/Apr/2025:14:04:12 -0700] "GET /_stcore/host-config HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:04:32,468 [INFO] Received activity: {'type': 'conversationUpdate', 'membersAdded': [{'id': 'e8a5f4d0-0f3c-11f0-9a00-492413f8e1ec', 'name': 'Bot'}, {'id': 'e341ec1a-4219-463f-9e8a-4e336040fb37', 'name': 'User'}], 'membersRemoved': [], 'channelId': 'emulator', 'conversation': {'id': 'e8a61be0-0f3c-11f0-bf20-31693d7816b8|livechat'}, 'id': 'e8ade410-0f3c-11f0-bf20-31693d7816b8', 'localTimestamp': '2025-04-01T15:04:32-06:00', 'recipient': {'id': 'e8a5f4d0-0f3c-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:04:32.465Z', 'from': {'id': 'e341ec1a-4219-463f-9e8a-4e336040fb37', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:04:32,469 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:04:32,471 [INFO] 127.0.0.1 [01/Apr/2025:14:04:32 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:05:12,981 [INFO] 127.0.0.1 [01/Apr/2025:14:05:12 -0700] "GET /_stcore/health HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:05:12,982 [INFO] 127.0.0.1 [01/Apr/2025:14:05:12 -0700] "GET /_stcore/host-config HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:05:25,338 [INFO] Starting app on port 8000...
+2025-04-01 15:05:27,876 [INFO] Received activity: {'type': 'conversationUpdate', 'membersAdded': [{'id': '09ac64c0-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot'}, {'id': '0db19453-2bfc-4668-a720-f0b638e97035', 'name': 'User'}], 'membersRemoved': [], 'channelId': 'emulator', 'conversation': {'id': '09adc450-0f3d-11f0-bf20-31693d7816b8|livechat'}, 'id': '09b58c80-0f3d-11f0-bf20-31693d7816b8', 'localTimestamp': '2025-04-01T15:05:27-06:00', 'recipient': {'id': '09ac64c0-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:05:27.880Z', 'from': {'id': '0db19453-2bfc-4668-a720-f0b638e97035', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:05:27,879 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:05:27,882 [INFO] 127.0.0.1 [01/Apr/2025:14:05:27 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:05:30,206 [INFO] Received activity: {'channelData': {'clientActivityID': '1743541530177jrra4oqtnqq'}, 'text': 'hi', 'textFormat': 'plain', 'type': 'message', 'channelId': 'emulator', 'from': {'id': '0db19453-2bfc-4668-a720-f0b638e97035', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'localTimestamp': '2025-04-01T15:05:30-06:00', 'localTimezone': 'America/Denver', 'attachments': [], 'entities': [{'requiresBotState': True, 'supportsListening': True, 'supportsTts': True, 'type': 'ClientCapabilities'}], 'conversation': {'id': '09adc450-0f3d-11f0-bf20-31693d7816b8|livechat'}, 'id': '0b193b30-0f3d-11f0-bf20-31693d7816b8', 'recipient': {'id': '09ac64c0-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:05:30.211Z', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:05:30,208 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:05:30,209 [INFO] 127.0.0.1 [01/Apr/2025:14:05:30 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:06:50,345 [INFO] Starting app on port 8000...
+2025-04-01 15:06:53,466 [INFO] Received activity: {'type': 'conversationUpdate', 'membersAdded': [{'id': '3cb01600-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot'}, {'id': 'f0b82ea4-4141-4ce6-a19a-5c5bef0a2f4c', 'name': 'User'}], 'membersRemoved': [], 'channelId': 'emulator', 'conversation': {'id': '3cb08b30-0f3d-11f0-bf20-31693d7816b8|livechat'}, 'id': '3cb8c890-0f3d-11f0-bf20-31693d7816b8', 'localTimestamp': '2025-04-01T15:06:53-06:00', 'recipient': {'id': '3cb01600-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:06:53.465Z', 'from': {'id': 'f0b82ea4-4141-4ce6-a19a-5c5bef0a2f4c', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:06:53,469 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:06:53,472 [INFO] 127.0.0.1 [01/Apr/2025:14:06:53 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:06:57,441 [INFO] Received activity: {'channelData': {'clientActivityID': '1743541617426ok7aa1ivjtb'}, 'text': 'hi', 'textFormat': 'plain', 'type': 'message', 'channelId': 'emulator', 'from': {'id': 'f0b82ea4-4141-4ce6-a19a-5c5bef0a2f4c', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'localTimestamp': '2025-04-01T15:06:57-06:00', 'localTimezone': 'America/Denver', 'attachments': [], 'entities': [{'requiresBotState': True, 'supportsListening': True, 'supportsTts': True, 'type': 'ClientCapabilities'}], 'conversation': {'id': '3cb08b30-0f3d-11f0-bf20-31693d7816b8|livechat'}, 'id': '3f175200-0f3d-11f0-bf20-31693d7816b8', 'recipient': {'id': '3cb01600-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:06:57.440Z', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:06:57,442 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:06:57,443 [INFO] 127.0.0.1 [01/Apr/2025:14:06:57 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:07:17,281 [INFO] 127.0.0.1 [01/Apr/2025:14:07:17 -0700] "GET /_stcore/health HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:07:17,282 [INFO] 127.0.0.1 [01/Apr/2025:14:07:17 -0700] "GET /_stcore/host-config HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:08:17,974 [INFO] 127.0.0.1 [01/Apr/2025:14:08:17 -0700] "GET /_stcore/health HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:08:17,975 [INFO] 127.0.0.1 [01/Apr/2025:14:08:17 -0700] "GET /_stcore/host-config HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:08:58,961 [INFO] Starting app on port 8000...
+2025-04-01 15:09:01,485 [INFO] Received activity: {'channelData': {'clientActivityID': '174354174146870rpk372iln'}, 'text': 'Hello', 'textFormat': 'plain', 'type': 'message', 'channelId': 'emulator', 'from': {'id': 'f0b82ea4-4141-4ce6-a19a-5c5bef0a2f4c', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'localTimestamp': '2025-04-01T15:09:01-06:00', 'localTimezone': 'America/Denver', 'attachments': [], 'conversation': {'id': '3cb08b30-0f3d-11f0-bf20-31693d7816b8|livechat'}, 'id': '8906a0a0-0f3d-11f0-bf20-31693d7816b8', 'recipient': {'id': '3cb01600-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:09:01.481Z', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:09:01,489 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:09:01,493 [INFO] 127.0.0.1 [01/Apr/2025:14:09:01 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:09:19,287 [INFO] 127.0.0.1 [01/Apr/2025:14:09:19 -0700] "GET /_stcore/health HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:09:19,287 [INFO] 127.0.0.1 [01/Apr/2025:14:09:19 -0700] "GET /_stcore/host-config HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:09:24,981 [INFO] Received activity: {'channelData': {'clientActivityID': '1743541764960byrg2my0dt', 'webchat:sequence-id': 0.002}, 'text': 'Hello', 'textFormat': 'plain', 'type': 'message', 'channelId': 'emulator', 'from': {'id': 'f0b82ea4-4141-4ce6-a19a-5c5bef0a2f4c', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'localTimestamp': '2025-04-01T15:09:24-06:00', 'localTimezone': 'America/Denver', 'attachments': [], 'conversation': {'id': '3cb08b30-0f3d-11f0-bf20-31693d7816b8|livechat'}, 'id': '9707fc30-0f3d-11f0-bf20-31693d7816b8', 'recipient': {'id': '3cb01600-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:09:24.979Z', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:09:24,982 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:09:24,984 [INFO] 127.0.0.1 [01/Apr/2025:14:09:24 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:09:29,945 [INFO] Received activity: {'type': 'conversationUpdate', 'membersAdded': [{'id': '3cb01600-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot'}, {'id': '18d6fdf6-1013-4de6-8a29-9fd4e9173f90', 'name': 'User'}], 'membersRemoved': [], 'channelId': 'emulator', 'conversation': {'id': '99f29900-0f3d-11f0-9a00-492413f8e1ec|livechat'}, 'id': '99fd6e70-0f3d-11f0-bf20-31693d7816b8', 'localTimestamp': '2025-04-01T15:09:29-06:00', 'recipient': {'id': '3cb01600-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:09:29.943Z', 'from': {'id': '18d6fdf6-1013-4de6-8a29-9fd4e9173f90', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:09:29,947 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:09:29,948 [INFO] 127.0.0.1 [01/Apr/2025:14:09:29 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:09:39,044 [INFO] Starting app on port 8000...
+2025-04-01 15:09:42,439 [INFO] Received activity: {'type': 'conversationUpdate', 'membersAdded': [{'id': 'a1699bc0-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot'}, {'id': 'ccfed6af-c33e-459c-8096-4ba76715914a', 'name': 'User'}], 'membersRemoved': [], 'channelId': 'emulator', 'conversation': {'id': 'a169e9e0-0f3d-11f0-bf20-31693d7816b8|livechat'}, 'id': 'a16fb640-0f3d-11f0-bf20-31693d7816b8', 'localTimestamp': '2025-04-01T15:09:42-06:00', 'recipient': {'id': 'a1699bc0-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:09:42.436Z', 'from': {'id': 'ccfed6af-c33e-459c-8096-4ba76715914a', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:09:42,443 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:09:42,446 [INFO] 127.0.0.1 [01/Apr/2025:14:09:42 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:09:46,943 [INFO] Received activity: {'channelData': {'clientActivityID': '1743541786928qenzqslxzwd'}, 'text': 'Hi', 'textFormat': 'plain', 'type': 'message', 'channelId': 'emulator', 'from': {'id': 'ccfed6af-c33e-459c-8096-4ba76715914a', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'localTimestamp': '2025-04-01T15:09:46-06:00', 'localTimezone': 'America/Denver', 'attachments': [], 'entities': [{'requiresBotState': True, 'supportsListening': True, 'supportsTts': True, 'type': 'ClientCapabilities'}], 'conversation': {'id': 'a169e9e0-0f3d-11f0-bf20-31693d7816b8|livechat'}, 'id': 'a41ed0b0-0f3d-11f0-bf20-31693d7816b8', 'recipient': {'id': 'a1699bc0-0f3d-11f0-9a00-492413f8e1ec', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-01T21:09:46.939Z', 'serviceUrl': 'http://localhost:53976'}
+2025-04-01 15:09:46,944 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-01 15:09:46,945 [INFO] 127.0.0.1 [01/Apr/2025:14:09:46 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
+2025-04-01 15:10:20,285 [INFO] 127.0.0.1 [01/Apr/2025:14:10:20 -0700] "GET /_stcore/health HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 15:10:20,286 [INFO] 127.0.0.1 [01/Apr/2025:14:10:20 -0700] "GET /_stcore/host-config HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
