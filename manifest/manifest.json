@@ -1,0 +1,71 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.20/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.20",
+    "version": "1.0.0",
+    "id": "be805f3c-6c0a-4838-aba9-92df4fc8d4a9",
+    "developer": {
+      "name": "Secure",
+      "websiteUrl": "https://secure.ca/",
+      "privacyUrl": "https://yourcompany.com/privacy",
+      "termsOfUseUrl": "https://yourcompany.com/terms",
+      "mpnId": "1234567890"
+    },
+    "name": {
+      "short": "DrillingBot",
+      "full": "DrillingBot - Intelligent Assistant for Drilling Operations"
+    },
+    "description": {
+      "short": "AI-powered bot for Recap studies done on Drilling operations",
+      "full": "DrillingBot is an intelligent assistant designed to answer questions related to oil and drilling, offering users insights, alerts, and productivity tools directly in Microsoft Teams."
+    },
+    "icons": {
+      "outline": "32x32.png",
+      "color": "192x192.png"
+    },
+    "accentColor": "#4464ee",
+    "bots": [
+      {
+        "botId": "be805f3c-6c0a-4838-aba9-92df4fc8d4a9",
+        "scopes": [
+          "personal",
+          "team",
+          "groupChat"
+        ],
+        "supportsFiles": true,
+        "isNotificationOnly": false,
+        "supportsCalling": false,
+        "supportsVideo": false,
+        "commandLists": [
+          {
+            "scopes": [
+              "personal",
+              "groupChat",
+              "team"
+            ],
+            "commands": [
+              {
+                "title": "Help",
+                "description": "Show help information"
+              },
+              {
+                "title": "Status",
+                "description": "Get current drilling status"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "permissions": [
+      "identity",
+      "messageTeamMembers"
+    ],
+    "validDomains": [
+      "yourcompany.com"
+    ],
+    "webApplicationInfo": {
+      "id": "be805f3c-6c0a-4838-aba9-92df4fc8d4a9",
+      "resource": "api://be805f3c-6c0a-4838-aba9-92df4fc8d4a9"
+    }
+  }
+  
