@@ -240,3 +240,22 @@ PermissionError: Required Authorization token was not supplied
 2025-04-01 15:09:46,945 [INFO] 127.0.0.1 [01/Apr/2025:14:09:46 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"
 2025-04-01 15:10:20,285 [INFO] 127.0.0.1 [01/Apr/2025:14:10:20 -0700] "GET /_stcore/health HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
 2025-04-01 15:10:20,286 [INFO] 127.0.0.1 [01/Apr/2025:14:10:20 -0700] "GET /_stcore/host-config HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-03 15:11:07,084 [INFO] Starting app on port 8000...
+2025-04-03 15:11:42,975 [INFO] 127.0.0.1 [03/Apr/2025:14:11:42 -0700] "GET /_stcore/health HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-03 15:11:42,976 [INFO] 127.0.0.1 [03/Apr/2025:14:11:42 -0700] "GET /_stcore/host-config HTTP/1.1" 404 174 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-03 15:11:45,385 [INFO] Received activity: {'type': 'conversationUpdate', 'membersAdded': [{'id': '3f84b8b0-10d0-11f0-a63b-6ded9fee1179', 'name': 'Bot'}, {'id': '8bc71c28-6196-4dc2-9b5c-d915b1218827', 'name': 'User'}], 'membersRemoved': [], 'channelId': 'emulator', 'conversation': {'id': '3f8554f0-10d0-11f0-9097-3fd5dca275f5|livechat'}, 'id': '3f8b4860-10d0-11f0-9097-3fd5dca275f5', 'localTimestamp': '2025-04-03T15:11:45-06:00', 'recipient': {'id': '3f84b8b0-10d0-11f0-a63b-6ded9fee1179', 'name': 'Bot', 'role': 'bot'}, 'timestamp': '2025-04-03T21:11:45.382Z', 'from': {'id': '8bc71c28-6196-4dc2-9b5c-d915b1218827', 'name': 'User', 'role': 'user'}, 'locale': 'en-US', 'serviceUrl': 'http://localhost:63020'}
+2025-04-03 15:11:45,388 [ERROR] Exception occurred while processing message:
+Traceback (most recent call last):
+  File "C:\Users\jbhogal\OneDrive - Secure Energy Services Inc\Desktop\echo_bot\app.py", line 76, in messages
+    response = await ADAPTER.process_activity(activity, auth_header, BOT.on_turn)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 444, in process_activity
+    identity = await self._authenticate_request(activity, auth_header)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botbuilder\core\bot_framework_adapter.py", line 553, in _authenticate_request
+    claims = await JwtTokenValidation.authenticate_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jbhogal\AppData\Local\anaconda3\Lib\site-packages\botframework\connector\auth\jwt_token_validation.py", line 49, in authenticate_request
+    raise PermissionError("Required Authorization token was not supplied")
+PermissionError: Required Authorization token was not supplied
+2025-04-03 15:11:45,392 [INFO] 127.0.0.1 [03/Apr/2025:14:11:45 -0700] "POST /api/messages HTTP/1.1" 500 212 "-" "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)"

@@ -80,6 +80,9 @@ class MyBot(ActivityHandler):
 
     async def on_message_activity(self, turn_context: TurnContext):
         logger.info("Received message activity: %s", turn_context.activity.text)
+                # 👉 Send typing indicator
+        typing_activity = Activity(type=ActivityTypes.typing)
+        await turn_context.send_activity(typing_activity)
         messages = [{"role": "user", "content": turn_context.activity.text}]
         await turn_context.send_activity(chat_with_products(messages, {}).content)
 
